@@ -2,15 +2,16 @@ import turtle
 import time
 
 s = turtle.getscreen()
-t = turtle.Turtle()
+
 
 t.shape("turtle")
-t.color("green")
 
 print("I am the Geometry Turtle. I can draw several shapes!")
 
 
 def draw():
+    t = turtle.Turtle()
+    
     # Asks the number of sides
     sides = int(input("Number of sides: "))
 
