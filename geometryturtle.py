@@ -3,17 +3,28 @@ import time
 
 s = turtle.getscreen()
 
-
-t.shape("turtle")
-
 print("I am the Geometry Turtle. I can draw several shapes!")
 
 
 def draw():
     t = turtle.Turtle()
-    
+
+    t.shape("turtle")
+
     # Asks the number of sides
     sides = int(input("Number of sides: "))
+
+    # Asks for the length of sides
+    length = int(input("Length of sides: "))
+    
+    # Asks for color
+    color = str(input("Color: "))
+    
+    try:
+        t.color(color)
+    except:
+        print("Try another color")
+        draw()
 
     # Finds the angle measures
     angles = float(180 - (360 / sides))
@@ -32,7 +43,7 @@ def draw():
         print(sides, "sides and each angle is", angles, "degrees!")
         # The actual drawing code
         for faces in range(sides):
-            t.fd(20)
+            t.fd(length)
             t.lt(180 - angles)
 
     # The end
@@ -45,7 +56,7 @@ def draw():
         elif end == "n":
             print("See you next time!")
             print("Closing in...")
-            final = 5
+            final = 3
             for i in reversed(range(final)):
                 time.sleep(1)
                 print(i + 1, "...")
